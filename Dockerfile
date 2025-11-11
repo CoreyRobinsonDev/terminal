@@ -6,6 +6,7 @@ RUN pacman -Syu --noconfirm \
 	bash 
 
 RUN yes | pacman -S zsh 
+RUN yes | pacman -S fastfetch 
 RUN yes | pacman -S ttf-jetbrains-mono-nerd 
 
 RUN sudo useradd -m guest 
