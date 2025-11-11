@@ -5,7 +5,6 @@ RUN pacman -Syu --noconfirm \
 	base-devel \
 	bash 
 
-RUN yes | pacman -S ttyd 
 RUN yes | pacman -S zsh 
 RUN yes | pacman -S ttf-jetbrains-mono-nerd 
 
@@ -15,11 +14,14 @@ COPY ./starship /usr/local/bin/starship
 RUN chmod +x /usr/local/bin/starship
 
 COPY ./startup.sh /usr/local/bin/startup
+COPY ./gotty /usr/local/bin/gotty
+COPY ./.gotty /home/guest
 RUN chmod +x /usr/local/bin/startup
+
 
 WORKDIR /home/guest
 USER guest
 
-EXPOSE 7681
+EXPOSE 8080
 
 CMD ["startup"]

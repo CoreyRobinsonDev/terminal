@@ -3,4 +3,4 @@
 echo 'eval "$(starship init zsh)"' > ~/.zshrc
 source ~/.zshrc
 
-ttyd -W zsh
+gotty -w zsh
